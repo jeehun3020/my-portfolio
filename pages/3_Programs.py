@@ -38,7 +38,7 @@ def load_images(folder, prefix=None):
 
 
 # ===============================
-# Sidebar (항상 유지)
+# Sidebar (Always Visible)
 # ===============================
 with st.sidebar:
     st.image("assets/profile.jpg", width=160)
@@ -70,7 +70,9 @@ with st.sidebar:
 # Main Page
 # ===============================
 st.title("🎓 Programs")
-st.markdown("Selected international programs, training courses, and mentorship experiences.")
+st.markdown(
+    "Selected international programs, training courses, and mentorship experiences."
+)
 st.markdown("---")
 
 
@@ -113,11 +115,23 @@ if st.session_state.active_program:
         if st.session_state.active_program == "qualcomm":
             st.header("Qualcomm Institute AI Entrepreneurship Program")
 
+            st.markdown(
+                """
+                **Program Overview**  
+                Participated in an intensive entrepreneurship program focused on  
+                **AI-driven technology commercialization**.  
+                Worked on team-based projects covering problem definition, technical validation,  
+                business modeling, and pitching with mentorship from researchers and industry experts.
+                """
+            )
+
+            st.markdown("---")
+
             photos = load_images("assets/programs/qualcomm", prefix="photo")
             if photos:
                 cols = st.columns(min(5, len(photos)))
                 for col, img in zip(cols, photos):
-                    col.image(img, width=260)  # 비율 유지
+                    col.image(img, width=260)
 
             certs = load_images("assets/programs/qualcomm", prefix="certificate")
             if certs:
@@ -131,6 +145,17 @@ if st.session_state.active_program:
         # ===== CES =====
         elif st.session_state.active_program == "ces":
             st.header("CES 2025 Emerging Software Technology Program")
+
+            st.markdown(
+                """
+                **Program Overview**  
+                Explored emerging software technologies and global AI trends at **CES 2025**.  
+                Participated in mentoring sessions and gained insights into how  
+                cutting-edge research is translated into real-world products and services.
+                """
+            )
+
+            st.markdown("---")
 
             photos = load_images("assets/programs/ces", prefix="photo")
             if photos:
@@ -150,6 +175,18 @@ if st.session_state.active_program:
         elif st.session_state.active_program == "singapore":
             st.header("Singapore Summer Secure Coding Program")
 
+            st.markdown(
+                """
+                **Program Overview**  
+                Completed an intensive training program focused on  
+                **secure coding practices and software vulnerability analysis**.  
+                Gained hands-on experience in identifying common security flaws  
+                and understanding secure system design in real-world software systems.
+                """
+            )
+
+            st.markdown("---")
+
             photos = load_images("assets/programs/singapore", prefix="photo")
             if photos:
                 cols = st.columns(min(5, len(photos)))
@@ -167,6 +204,17 @@ if st.session_state.active_program:
         # ===== Naver =====
         elif st.session_state.active_program == "naver":
             st.header("Naver Boostcourse AI Basic Coaching Study Program")
+
+            st.markdown(
+                """
+                **Program Overview**  
+                Completed a foundational AI study program covering  
+                machine learning concepts, model implementation, and  
+                collaborative problem-solving through guided coaching sessions.
+                """
+            )
+
+            st.markdown("---")
 
             certs = load_images("assets/programs/naver", prefix="certificate")
             for cert in certs:
