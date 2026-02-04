@@ -48,7 +48,7 @@ award_item(
     "2025 SW중심대학 연합 SW FESTIVAL 대상",
     "SW중심대학연합, Korea",
     "Nov. 2025",
-    "assets/awards/sw_festival_2025.png"
+    "assets/awards/sw_festival_2025.jpg"
 )
 
 award_item(
